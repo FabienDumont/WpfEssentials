@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>FabienDumont_WpfEssentials</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>FabienDumont</Authors>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <RepositoryUrl>https://github.com/FabienDumont/WpfEssentials</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/FabienDumont/WpfEssentials</PackageProjectUrl>
+    <PackageTags>wpf</PackageTags>
+    <Description>
+      Useful elements to start developping a WPF app.
+    </Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="MaterialDesignThemes.MahApps" Version="5.2.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.2" />
+  </ItemGroup>
+</Project>

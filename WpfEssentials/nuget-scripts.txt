@@ -1,0 +1,7 @@
+﻿# PACKING
+Se mettre dans le projet
+dotnet pack --configuration Release --include-symbols
+
+# PUSHING
+se mettre dans bin/Release du projet
+dotnet nuget push *.nupkg -s https://api.nuget.org/v3/index.json -k <API_KEY>

@@ -1,0 +1,24 @@
+﻿<Page x:Class="WpfDemo.Views.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d"
+      DataContext="{Binding Source={StaticResource Locator}, Path=HomeVm}">
+  <StackPanel Margin="20" HorizontalAlignment="Center">
+    <TextBlock Text="Home Page" HorizontalAlignment="Center" FontSize="22" />
+    <Button Margin="0 10 0 0"
+            Content="Another Page"
+            Command="{Binding NavigateAnotherCommand}" />
+    <Button Margin="0 10 0 0"
+            Content="Modal Page"
+            Command="{Binding NavigateModalCommand}" />
+  </StackPanel>
+</Page>

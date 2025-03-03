@@ -1,0 +1,27 @@
+<Window x:Class="WpfEssentials.Controls.ToastMessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Name="View"
+        Width="450"
+        MinHeight="60"
+        Loaded="ToastMessageBox_OnLoaded"
+        PreviewMouseLeftButtonDown="ToastMessageBox_OnPreviewMouseLeftButtonDown"
+        SizeToContent="Height"
+        Style="{StaticResource ToastWindowStyle}">
+  <Window.Triggers>
+    <EventTrigger RoutedEvent="Window.Loaded">
+      <BeginStoryboard>
+        <Storyboard>
+          <DoubleAnimation Storyboard.TargetName="View"
+                           Storyboard.TargetProperty="Opacity"
+                           From="0"
+                           To="1"
+                           Duration="0:0:0.3" />
+        </Storyboard>
+      </BeginStoryboard>
+    </EventTrigger>
+  </Window.Triggers>
+  <TextBlock Padding="15"
+             Text="{Binding ElementName=View, Path=Message, Mode=OneWay}"
+             TextWrapping="Wrap" />
+</Window>
