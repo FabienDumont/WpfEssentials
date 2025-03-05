@@ -5,7 +5,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WpfDemo.Services;
-using WpfEssentials;
 using WpfEssentials.Core;
 using WpfEssentials.Services;
 using MainWindow = WpfDemo.Views.MainWindow;
@@ -40,8 +39,11 @@ public partial class App
   {
     // Adds services
     services.AddSingleton<MainWindow>();
-    services.AddWpf();
     services.AddViewModels();
+    services.AddSingleton<IToastService, ToastService>();
+    services.AddSingleton<IDialogService, DialogService>();
+    services.AddSingleton<INavigationService, NavigationService>();
+    services.AddSingleton<INavigationFrame, NavigationFrame>();
     services.AddSingleton<INavigationPageResolver, ProjectNavigationPageResolver>();
     services.AddSingleton<IViewLocator, ProjectViewLocator>();
 

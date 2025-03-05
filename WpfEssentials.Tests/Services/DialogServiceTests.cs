@@ -6,7 +6,7 @@ using WpfEssentials.Core;
 using WpfEssentials.Services;
 using Xunit;
 
-namespace WpfEssentials.Tests;
+namespace WpfEssentials.Tests.Services;
 
 public class DialogServiceTests
 {

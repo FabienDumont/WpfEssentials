@@ -2,10 +2,9 @@
 using FakeItEasy;
 using FluentAssertions;
 using WpfEssentials.Core;
-using WpfEssentials.Services;
 using Xunit;
 
-namespace WpfEssentials.Tests;
+namespace WpfEssentials.Tests.Core;
 
 public class ServiceLocatorTests
 {
