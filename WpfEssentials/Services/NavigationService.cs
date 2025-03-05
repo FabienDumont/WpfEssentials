@@ -2,24 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Controls;
+using WpfEssentials.Core;
 using WpfEssentials.Helpers;
 
 namespace WpfEssentials.Services;
 
-public class NavigationService : INavigationService
+public class NavigationService(INavigationPageResolver pageResolver, INavigationFrame navigationFrame)
+  : INavigationService
 {
-  private readonly INavigationPageResolver _pageResolver;
-  private static readonly IDictionary<string, object> Parameters = new Dictionary<string, object>();
-
-  public NavigationService(INavigationPageResolver pageResolver)
-  {
-    _pageResolver = pageResolver;
-  }
-
-  private Frame? Frame =>
-    VisualTreeHelperExtensions.FindChildren<Frame>(System.Windows.Application.Current.MainWindow).FirstOrDefault();
-
-  public string? CurrentPageKey { get; private set; }
+  private static readonly Dictionary<string, object> Parameters = new();
+  private string? _currentPageKey;
 
   public T? TryGetParameter<T>(string pageKey)
   {
@@ -28,12 +20,15 @@ public class NavigationService : INavigationService
 
   public void GoBack()
   {
-    if (CurrentPageKey != null && Parameters.ContainsKey(CurrentPageKey))
+    if (_currentPageKey != null && Parameters.ContainsKey(_currentPageKey))
     {
-      Parameters.Remove(CurrentPageKey);
+      Parameters.Remove(_currentPageKey);
     }
 
-    Frame?.NavigationService.GoBack();
+    if (navigationFrame.CanGoBack)
+    {
+      navigationFrame.GoBack();
+    }
   }
 
   public void NavigateTo(string pageKey)
@@ -43,7 +38,7 @@ public class NavigationService : INavigationService
 
   public void NavigateTo(string pageKey, object? parameter)
   {
-    var pageUri = _pageResolver.GetPageUri(pageKey);
+    var pageUri = pageResolver.GetPageUri(pageKey);
     if (pageUri == null)
     {
       throw new ArgumentOutOfRangeException(nameof(pageKey), $"No registered page for key: {pageKey}");
@@ -51,14 +46,14 @@ public class NavigationService : INavigationService
 
     if (parameter == null)
     {
-      Frame?.NavigationService.Navigate(pageUri);
+      navigationFrame.Navigate(pageUri);
     }
     else
     {
-      Frame?.NavigationService.Navigate(pageUri, parameter);
+      navigationFrame.Navigate(pageUri, parameter);
       Parameters[pageKey] = parameter;
     }
 
-    CurrentPageKey = pageKey;
+    _currentPageKey = pageKey;
   }
 }

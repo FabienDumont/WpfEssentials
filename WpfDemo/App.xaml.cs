@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WpfDemo.Services;
 using WpfEssentials;
+using WpfEssentials.Core;
 using WpfEssentials.Services;
 using MainWindow = WpfDemo.Views.MainWindow;
 

@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDemo", "WpfDemo\WpfDemo.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfEssentials", "WpfEssentials\WpfEssentials.csproj", "{FBFFDA3C-C8F7-4BFA-8679-EB1A2EC3969C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfEssentials.Tests", "WpfEssentials.Tests\WpfEssentials.Tests.csproj", "{BA31A008-2A98-4194-B58E-2A50402D4925}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{FBFFDA3C-C8F7-4BFA-8679-EB1A2EC3969C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBFFDA3C-C8F7-4BFA-8679-EB1A2EC3969C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBFFDA3C-C8F7-4BFA-8679-EB1A2EC3969C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA31A008-2A98-4194-B58E-2A50402D4925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA31A008-2A98-4194-B58E-2A50402D4925}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA31A008-2A98-4194-B58E-2A50402D4925}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA31A008-2A98-4194-B58E-2A50402D4925}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

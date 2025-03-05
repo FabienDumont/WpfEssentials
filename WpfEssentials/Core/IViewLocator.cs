@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WpfEssentials.Services;
+namespace WpfEssentials.Core;
 
 public interface IViewLocator
 {

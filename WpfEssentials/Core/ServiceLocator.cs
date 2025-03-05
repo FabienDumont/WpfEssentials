@@ -1,8 +1,7 @@
 using System;
-using System.Diagnostics.CodeAnalysis;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace WpfEssentials.Services;
+namespace WpfEssentials.Core;
 
 /// <summary>
 ///   Service Locator for MVVM pattern applications.
@@ -24,7 +23,7 @@ public class ServiceLocator : IServiceProvider
   /// </summary>
   /// <param name="provider">The provider.</param>
   /// <exception cref="ArgumentNullException">provider</exception>
-  public ServiceLocator([NotNull] IServiceProvider? provider)
+  public ServiceLocator(IServiceProvider? provider)
   {
     _provider = provider ?? throw new ArgumentNullException(nameof(provider));
   }
@@ -58,9 +57,10 @@ public class ServiceLocator : IServiceProvider
   /// </summary>
   /// <param name="serviceProvider">The service provider.</param>
   /// <exception cref="ArgumentNullException">serviceProvider</exception>
-  public static void SetLocatorProvider([NotNull] IServiceProvider? serviceProvider)
+  public static void SetLocatorProvider(IServiceProvider? serviceProvider)
   {
     _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
+    _serviceLocator = new ServiceLocator(_serviceProvider);
   }
 
   /// <summary>

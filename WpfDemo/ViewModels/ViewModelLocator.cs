@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics;
+using WpfEssentials;
+using WpfEssentials.Core;
 using WpfEssentials.Services;
 
 namespace WpfDemo.ViewModels;
