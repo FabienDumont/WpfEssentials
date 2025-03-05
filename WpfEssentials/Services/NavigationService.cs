@@ -1,9 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Controls;
 using WpfEssentials.Core;
-using WpfEssentials.Helpers;
 
 namespace WpfEssentials.Services;
 

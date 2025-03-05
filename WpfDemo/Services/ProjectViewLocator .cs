@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using WpfDemo.ViewModels;
 using WpfDemo.Views;
-using WpfEssentials;
 using WpfEssentials.Core;
-using WpfEssentials.Services;
 
 namespace WpfDemo.Services;
 

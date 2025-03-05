@@ -1,22 +1,12 @@
 ﻿using CommunityToolkit.Mvvm.Input;
-using WpfEssentials;
 using WpfEssentials.Services;
 using WpfEssentials.ViewModels;
 
 namespace WpfDemo.ViewModels;
 
-public sealed partial class MainVm : BaseVm
+public sealed partial class MainVm(IDialogService dialogService, INavigationService navigationService)
+  : BaseVm(dialogService, navigationService)
 {
-  #region Ctors
-
-  public MainVm(IDialogService dialogService, INavigationService navigationService) : base(
-    dialogService, navigationService
-  )
-  {
-  }
-
-  #endregion
-
   #region Methods
 
   [RelayCommand]

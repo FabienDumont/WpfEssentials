@@ -19,8 +19,8 @@ public abstract class BaseVm : ObservableRecipient
 
   #region Properties
 
-  protected IDialogService DialogService { get; }
-  protected INavigationService NavigationService { get; }
+  public IDialogService DialogService { get; }
+  public INavigationService NavigationService { get; }
 
   public bool IsLoading
   {

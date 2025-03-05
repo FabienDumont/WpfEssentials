@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
-using WpfEssentials;
 using WpfEssentials.Services;
 using WpfEssentials.ViewModels;
 
@@ -25,7 +24,7 @@ public class AnotherVm(IDialogService dialogService, INavigationService navigati
 
   #region Commands
 
-  public AsyncRelayCommand LoadDataCommand => new(LoadDataAsync, CanLoadData);
+  public AsyncRelayCommand LoadDataCommand => new(LoadDataAsync);
   public RelayCommand AddMessageCommand => new(AddMessage, CanAddMessage);
   public RelayCommand<object> AddSpecificMessageCommand => new(AddSpecificMessage, CanAddSpecificMessage);
   public ICommand NavigateBackCommand => new RelayCommand(NavigateBack);
@@ -37,10 +36,8 @@ public class AnotherVm(IDialogService dialogService, INavigationService navigati
   private async Task LoadDataAsync()
   {
     await Task.Delay(1000);
-    await dialogService.ShowMessage("Data loaded!");
+    await DialogService.ShowMessage("Data loaded!");
   }
-
-  private bool CanLoadData() => true;
 
   private bool CanAddMessage()
   {

@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FakeItEasy" Version="8.3.0" />
+    <PackageReference Include="FluentAssertions" Version="8.1.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WpfDemo\WpfDemo.csproj" />
+    <ProjectReference Include="..\WpfEssentials\WpfEssentials.csproj" />
+  </ItemGroup>
+
+</Project>

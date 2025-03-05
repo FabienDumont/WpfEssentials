@@ -1,6 +1,5 @@
 ﻿using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
-using WpfEssentials;
 using WpfEssentials.Services;
 using WpfEssentials.ViewModels;
 
